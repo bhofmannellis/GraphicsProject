@@ -598,7 +598,7 @@ ModelImporter:
       takeName: 303_HW_Mahou
       firstFrame: 0
       lastFrame: 200
-      wrapMode: 1
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
