@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{215AF25B-039D-C859-26CC-BFD489B9792D}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_2;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_32;UNITY_EDITOR_WIN;VUFORIA_ANDROID_SETTINGS</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\AceButtonsScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
+     <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
+     <Compile Include="Assets\HealthScript.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\LocomotionGUI.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionCamera.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\2.Helloween\GhostController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\3.Christmas\ChristmasController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\CameraAction.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\GUIController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\GUIControllerAttack.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\GUIControllerChristmas.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\GUIControllerFlying.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\GUIControllerHalloween.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QueryAnimationController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QueryEmotionalController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QueryMechanimController.cs" />
+     <Compile Include="Assets\PQAssets\Query-Chan\Scripts\QuerySoundController.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\BackgroundPlaneBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CloudRecoBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\CylinderTargetBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DataSetLoadBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DefaultInitializationErrorHandler.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DefaultSmartTerrainEventHandler.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\DefaultTrackableEventHandler.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\GLErrorHandler.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\HideExcessAreaBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\ImageTargetBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\Internal\AndroidUnityPlayer.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\Internal\ComponentFactoryStarterBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\Internal\IOSUnityPlayer.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\Internal\VuforiaBehaviourComponentFactory.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\KeepAliveBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\MarkerBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\MaskOutBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\MultiTargetBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\ObjectTargetBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\PropBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\QCARBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\ReconstructionBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\ReconstructionFromTargetBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\SmartTerrainTrackerBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\SurfaceBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\TextRecoBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\TurnOffBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\TurnOffWordBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\UserDefinedTargetBuildingBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\VideoBackgroundBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\VideoTextureRenderer.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\VirtualButtonBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WebCamBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeBehaviour.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
+     <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Documents\ReadMe.txt" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\link.xml" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Fur.shader" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\VertexLitWithZ.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\license_en.txt" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
+     <None Include="Assets\UnityChan\license.txt" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
+     <None Include="Assets\license_3rdpartynotice.txt" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\VideoBackground.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Halloween.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\license_jp.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_velvet.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\Editor\QCAR\WebcamProfiles\profiles.xml" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_TreeLight.shader" />
+     <None Include="Assets\warlor_Bruce\bruce_notes.txt" />
+     <None Include="Assets\warlor_Bruce\bruce_animationList.txt" />
+     <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_TransBlue.shader" />
+     <None Include="Assets\readme_SDK.txt" />
+     <None Include="Assets\Qualcomm Augmented Reality\Shaders\Text3D.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>D:/Unity Workspace/GraphicsProject/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Qualcomm.Vuforia.UnityExtensions">
+ <HintPath>D:/Unity Workspace/GraphicsProject/Assets/Qualcomm Augmented Reality/Scripts/Internal/Qualcomm.Vuforia.UnityExtensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
