@@ -120,7 +120,7 @@ ModelImporter:
     4300000: Plane016
     4300002: Object038
     4300004: Plane027
-    7400000: JackAttack2
+    7400000: JackAttack1
     9500000: //RootNode
     11100000: //RootNode
     13700000: Object038
@@ -143,7 +143,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: JackAttack2
+      name: JackAttack1
       takeName: Take 001
       firstFrame: 0
       lastFrame: 24
