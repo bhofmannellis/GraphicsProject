@@ -48,13 +48,13 @@ public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb){
 		switch (vb.VirtualButtonName){
 		case "AceAttackButton":
-			AceAnimation.Play("AceAttack1");
-			AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
+			// AceAnimation.Play("AceAttack1");
+			// AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
 			Debug.Log ("<<<<<AceAttack Pressed>>>>>");
 			break;
 		case "AceSpecialButton":
-			AceAnimation.Play("AceAttack2");
-			AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
+			// AceAnimation.Play("AceAttack2");
+			// AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<AceSpecial Pressed>>>>>");
 			break;
 		case "JackAttackButton":
@@ -78,13 +78,13 @@ public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 			Debug.Log("<<<<<KingSpecial Pressed>>>>>");
 			break;
 		case "QueenAttackButton":
-			QueenAnimation.Play("QueenAttack1");
-			QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
+			// QueenAnimation.Play("QueenAttack1");
+			// QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<QueenAttack Pressed>>>>>");
 			break;
 		case "QueenSpecialButton":
-			QueenAnimation.Play("QueenAttack2");
-			QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
+			// QueenAnimation.Play("QueenAttack2");
+			// QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<QueenSpecial Pressed>>>>>");
 			break;
 		}
@@ -93,27 +93,43 @@ public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb){
 		switch (vb.VirtualButtonName){
 		case "AceAttackButton":
+			AceAnimation.Play("AceAttack1");
+			AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
 			Debug.Log ("<<<<<AceAttack Released>>>>>");
 			break;
 		case "AceSpecialButton":
+			AceAnimation.Play("AceAttack2");
+			AceAnimation.PlayQueued("AceIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<AceSpecial Released>>>>>");
 			break;
 		case "JackAttackButton":
+			JackAnimation.Play("JackAttack1");
+			JackAnimation.PlayQueued("JackIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<JackAttack Released>>>>>");
 			break;
 		case "JackSpecialButton":
+			JackAnimation.Play("JackAttack2");
+			JackAnimation.PlayQueued("JackIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<JackSpecial Released>>>>>");
 			break;
 		case "KingAttackButton":
+			KingAnimation.Play("KingAttack1");
+			KingAnimation.PlayQueued("KingIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<KingAttack Released>>>>>");
 			break;
 		case "KingSpecialButton":
+			KingAnimation.Play("KingAttack2");
+			KingAnimation.PlayQueued("KingIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<KingSpecial Released>>>>>");
 			break;
 		case "QueenAttackButton":
+			QueenAnimation.Play("QueenAttack1");
+			QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<QueenAttack Released>>>>>");
 			break;
 		case "QueenSpecialButton":
+			QueenAnimation.Play("QueenAttack2");
+			QueenAnimation.PlayQueued("QueenIdle", QueueMode.CompleteOthers);
 			Debug.Log("<<<<<QueenSpecial Released>>>>>");
 			break;
 		}
