@@ -60,7 +60,6 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Halloween.shader" />
@@ -70,6 +69,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />
@@ -133,10 +133,6 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{215AF25B-039D-C859-26CC-BFD489B9792D}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

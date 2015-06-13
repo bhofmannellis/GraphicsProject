@@ -136,10 +136,10 @@ ModelImporter:
     4300020: Finger_R
     7400000: 000_Def
     7400002: 301_HW_Stand
-    7400004: 302_HW_Idle
-    7400006: 303_HW_Mahou
-    7400008: 304_HW_Trick_or_Treat
-    7400010: 310_HW_wait_Long
+    7400004: QueenIdle
+    7400006: QueenAttack1
+    7400008: QueenAttack2
+    7400010: QueenHit
     9500000: //RootNode
     11100000: //RootNode
     13700000: Body
@@ -452,7 +452,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: 302_HW_Idle
+      name: QueenIdle
       takeName: 302_HW_Idle
       firstFrame: 0
       lastFrame: 150
@@ -594,7 +594,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: 303_HW_Mahou
+      name: QueenAttack1
       takeName: 303_HW_Mahou
       firstFrame: 0
       lastFrame: 200
@@ -736,7 +736,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: 304_HW_Trick_or_Treat
+      name: QueenAttack2
       takeName: 304_HW_Trick_or_Treat
       firstFrame: 0
       lastFrame: 140
@@ -878,15 +878,15 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: 310_HW_wait_Long
+      name: QueenHit
       takeName: 310_HW_wait_Long
-      firstFrame: 0
-      lastFrame: 690
-      wrapMode: 2
+      firstFrame: 100
+      lastFrame: 180
+      wrapMode: 4
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
-      loop: 0
+      loop: 1
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0

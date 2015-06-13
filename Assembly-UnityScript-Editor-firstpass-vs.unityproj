@@ -58,7 +58,6 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Halloween.shader" />
@@ -68,6 +67,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />

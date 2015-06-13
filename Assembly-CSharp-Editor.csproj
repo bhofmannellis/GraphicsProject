@@ -60,7 +60,6 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\VideoBackground.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Halloween.shader" />
@@ -70,6 +69,7 @@
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\DepthMask.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\StreamingAssets\QCAR\GachonGraphicsSpr2015.xml" />
      <None Include="Assets\GradientGUIBars\ReadMe\AboutFonts.txt" />
      <None Include="Assets\Qualcomm Augmented Reality\Shaders\BrightTexture.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />
@@ -131,8 +131,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{68B3FF2B-264F-4879-5893-C6786B6B01AC}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{215AF25B-039D-C859-26CC-BFD489B9792D}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-Editor-firstpass.unityproj">
       <Project>{E716EC5C-F2B3-E1AA-B8D5-0EA63A7824A9}</Project>      <Name>Assembly-UnityScript-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
