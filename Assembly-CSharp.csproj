@@ -102,6 +102,7 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
+     <Compile Include="Assets\ShowAceHealth.cs" />
      <Compile Include="Assets\VirtualButtonEvent.cs" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_WrappingPaper.shader" />

@@ -9,10 +9,10 @@ public class HealthScript : MonoBehaviour {
     public RectTransform queenHealthTrans;
     public RectTransform kingHealthTrans;
 
-    public static bool drawAceHealth;    // Flag for Ace's presence
-    public static bool drawJackHealth;   // Flag for Jack's presence
-    public static bool drawKingHealth;   // Flag for King's presence
-    public static bool drawQueenHealth;  // Flag for Queen's presence
+    public static bool drawAceHealth = false;   // Flag for Ace's presence
+	public static bool drawJackHealth = false;  // Flag for Jack's presence
+	public static bool drawKingHealth = false;  // Flag for King's presence
+	public static bool drawQueenHealth = false; // Flag for Queen's presence
 
     // Save y-locations of each healthbar
     private float yPosAce;
@@ -54,6 +54,7 @@ public class HealthScript : MonoBehaviour {
 			HandleHealth();}
 	}
 
+	// TODO : Set max health
     public int aceMaxHealth;
 	public int jackMaxHealth;
 	public int kingMaxHealth;
@@ -76,6 +77,10 @@ public class HealthScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		// TODO : initialize RectangleTransforms for each character
+		// TODO : initialize healthimages for each character
+		// TODO : Set healthimage for 
 
         // Save y-position of each healthbar
         yPosAce = aceHealthTrans.position.y;
@@ -188,6 +193,7 @@ public class HealthScript : MonoBehaviour {
 			KingHealth = 0;
 	}
 
+	// If the queen is not on damage cooldown, register the hit and start the cooldown
 	public void hitQueen(int damage){
 		if (!aceOnCooldown) {
 			QueenHealth -= damage;
@@ -197,21 +203,28 @@ public class HealthScript : MonoBehaviour {
 			QueenHealth = 0;
 	}
 
+	// Set a timer for Ace's hit cooldown
 	IEnumerator aceDamageCooldown(){
 		aceOnCooldown = true;
 		yield return new WaitForSeconds (aceHealthCooldown);
 		aceOnCooldown = false;
 	}
+	
+	// Set a timer for Jack's hit cooldown
 	IEnumerator jackDamageCooldown(){
 		jackOnCooldown = true;
 		yield return new WaitForSeconds (jackHealthCooldown);
 		jackOnCooldown = false;
 	}
+	
+	// Set a timer for King's hit cooldown
 	IEnumerator kingDamageCooldown(){
 		kingOnCooldown = true;
 		yield return new WaitForSeconds (kingHealthCooldown);
 		kingOnCooldown = false;
 	}
+	
+	// Set a timer for Queen's hit cooldown
 	IEnumerator queenDamageCooldown(){
 		queenOnCooldown = true;
 		yield return new WaitForSeconds (queenHealthCooldown);

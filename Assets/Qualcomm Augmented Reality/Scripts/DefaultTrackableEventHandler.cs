@@ -20,8 +20,6 @@ namespace Vuforia
     
         #endregion // PRIVATE_MEMBER_VARIABLES
 
-
-
         #region UNTIY_MONOBEHAVIOUR_METHODS
     
         void Start()
@@ -83,12 +81,24 @@ namespace Vuforia
                 component.enabled = true;
             }
 
+			// Check which character was found and show their health bar
+			CheckAceDrawCanvas (true);
+			CheckJackDrawCanvas (true);
+			CheckQueenDrawCanvas (true);
+			CheckKingDrawCanvas (true);
+
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }
 
 
         private void OnTrackingLost()
         {
+			// Check which character is no longer being tracked and hide that character's heath bar
+			CheckAceDrawCanvas (false);
+			CheckJackDrawCanvas (false);
+			CheckQueenDrawCanvas (false);
+			CheckKingDrawCanvas (false);
+
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
@@ -106,6 +116,70 @@ namespace Vuforia
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }
+
+		// Show or hide Ace health bar depending on 'enable' flag
+		private void CheckAceDrawCanvas(bool enable){
+			// First check if Ace object is instantiated
+			if (GameObject.Find ("AceTarget") != null) {
+				// Next, check if parent object which called this method is the AceTarget
+				if (transform.gameObject.GetInstanceID () == GameObject.Find("AceTarget").GetInstanceID()) {
+					// If 'enable' flag is true, draw healthbar, if false, hide healthbar
+					if (enable){
+						GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 1;
+					} else {
+						GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+					}
+				}
+			}
+		}
+
+		// Show or hide Jack health bar depending on 'enable' flag
+		private void CheckJackDrawCanvas(bool enable){
+			// First check if Jack object is instantiated
+			if (GameObject.Find ("JackTarget") != null) {
+				// Next, check if parent object which called this method is the JackTarget
+				if (transform.gameObject.GetInstanceID () == GameObject.Find ("JackTarget").GetInstanceID ()){
+					// If 'enable' flag is true, draw healthbar, if false, hide healthbar
+					if (enable) {
+						GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 1;
+					} else {
+						GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+					}
+				}
+			}
+		}
+		
+		// Show or hide Queen health bar depending on 'enable' flag
+		private void CheckQueenDrawCanvas(bool enable){
+			// First check if Queen object is instantiated
+			if (GameObject.Find ("QueenTarget") != null) {
+				// Next, check if parent object which called this method is the QueenTarget
+				if (transform.gameObject.GetInstanceID () == GameObject.Find ("QueenTarget").GetInstanceID ()) {
+					// If 'enable' flag is true, draw healthbar, if false, hide healthbar
+					if (enable) {
+						GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 1;
+					} else {
+						GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+					}
+				}
+			}
+		}
+		
+		// Show or hide King health bar depending on 'enable' flag
+		private void CheckKingDrawCanvas(bool enable){
+			// First check if King object is instantiated
+			if (GameObject.Find ("KingTarget") != null) {
+				// Next, check if parent object which called this method is the KingTarget
+				if (transform.gameObject.GetInstanceID () == GameObject.Find("KingTarget").GetInstanceID()){
+					// If 'enable' flag is true, draw healthbar, if false, hide healthbar
+					if (enable) {
+						GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 1;
+					} else {
+						GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+					}
+				}
+			}
+		}
 
         #endregion // PRIVATE_METHODS
     }
