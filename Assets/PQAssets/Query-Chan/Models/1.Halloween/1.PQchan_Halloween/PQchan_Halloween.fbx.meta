@@ -882,7 +882,7 @@ ModelImporter:
       takeName: 310_HW_wait_Long
       firstFrame: 100
       lastFrame: 180
-      wrapMode: 4
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

@@ -46,11 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AceHit.cs" />
      <Compile Include="Assets\GradientGUIBars\Script\ControlGUIScript.cs" />
      <Compile Include="Assets\GradientGUIBars\Script\GUIBarScript.cs" />
      <Compile Include="Assets\GradientGUIBars\Script\MoreButtonScript.cs" />
      <Compile Include="Assets\GradientGUIBars\Script\MoveCameraScript.cs" />
      <Compile Include="Assets\HealthScript.cs" />
+     <Compile Include="Assets\JackHit.cs" />
+     <Compile Include="Assets\KingHit.cs" />
      <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\LocomotionGUI.cs" />
      <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionCamera.cs" />
      <Compile Include="Assets\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionController.cs" />
@@ -102,7 +105,7 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\ShowAceHealth.cs" />
+     <Compile Include="Assets\QueenHit.cs" />
      <Compile Include="Assets\VirtualButtonEvent.cs" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
      <None Include="Assets\PQAssets\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
