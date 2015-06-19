@@ -62,10 +62,10 @@ public class HealthScript : MonoBehaviour {
 	public bool queenOnCooldown;
 	public bool queenOnSpecialCooldown;
 
-	private bool aceAlive;
-	private bool jackAlive;
-	private bool kingAlive;
-	private bool queenAlive;
+	public bool aceAlive;
+	public bool jackAlive;
+	public bool kingAlive;
+	public bool queenAlive;
 
 	// Use this for initialization
 	void Start () {
@@ -112,6 +112,21 @@ public class HealthScript : MonoBehaviour {
 			queenHealthImage.color = new Color32 ((byte)(255.0f * (queenMaxHealth - queenHealth) /  (float) queenMaxHealth ),255,0,255);
 		else
 			queenHealthImage.color = new Color32 (255, (byte)(255.0f * queenHealth / queenMaxHealth),0,255);
+
+		// Check if either team has been defeated. If so, hide UI and show victory screen
+		if (!queenAlive && !kingAlive) {
+			GameObject.Find ("VictorySpadeCanvas").GetComponent<CanvasGroup> ().alpha = 1;
+			GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+		} else if (!jackAlive && !aceAlive) {
+			GameObject.Find ("VictoryHeartCanvas").GetComponent<CanvasGroup> ().alpha = 1;
+			GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+			GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
+		}
 
 	}
 
@@ -178,11 +193,21 @@ public class HealthScript : MonoBehaviour {
 		Debug.Log ("<<< QueenHealth: " + queenHealth);
 	}
 
+	// Queen's special move -- If she's alive and not on cooldown, heal the King and Queen
 	public void healSpecial(){
 		if (queenAlive && !queenOnSpecialCooldown) {
-			if (kingAlive)
-				KingHealth += kingMaxHealth / 2;
-			QueenHealth += queenMaxHealth / 2;
+			if (kingAlive){
+				if (KingHealth >= kingMaxHealth / 2)
+					KingHealth = kingMaxHealth;
+				else
+					KingHealth += kingMaxHealth / 2;
+			}
+			if (queenAlive){
+				if (QueenHealth >= queenMaxHealth / 2)
+					QueenHealth = queenMaxHealth;
+				else
+					QueenHealth += queenMaxHealth / 2;
+			}
 			queenSpecial();
 		}
 	}

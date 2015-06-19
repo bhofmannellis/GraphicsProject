@@ -23,7 +23,7 @@ public class QueenHit : MonoBehaviour {
 				if (col.gameObject.name == "Bip01") {
 					
 					// If so, apply damage according to which attack is active
-					if (attackAnimation ["AceAttack1"].enabled)
+					// if (attackAnimation ["AceAttack1"].enabled)
 						GameObject.FindObjectOfType<HealthScript> ().hitAce (25);
 				}
 			}
@@ -31,10 +31,10 @@ public class QueenHit : MonoBehaviour {
 			// Check that KingTarget exists in the game space
 			if (GameObject.Find ("JackTarget") != null) {
 				// Next, check that the collision is with the King's hitbox
-				if (col.gameObject.name == "Bip001"){
+				if (col.gameObject.name == "Bip01"){
 					
 					// If so, apply damage according to which attack is active
-					if (attackAnimation ["QueenAttack1"].enabled)
+					// if (attackAnimation ["QueenAttack1"].enabled)
 						GameObject.FindObjectOfType<HealthScript> ().hitJack (25);		
 				}
 			} 
