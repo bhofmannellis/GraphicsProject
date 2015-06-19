@@ -82,6 +82,9 @@ public class HealthScript : MonoBehaviour {
 	public bool kingAlive;
 	public bool queenAlive;
 
+	// Boolean for checking that the game has ended
+	private bool gameOver;
+
 	// Use this for initialization
 	void Start () {
 
@@ -92,7 +95,7 @@ public class HealthScript : MonoBehaviour {
         kingHealth = kingMaxHealth;
 
 		// Set cooldowns to false and characters to alive
-		aceOnCooldown = jackOnCooldown = kingOnCooldown = queenOnCooldown = queenOnSpecialCooldown = false;
+		aceOnCooldown = jackOnCooldown = kingOnCooldown = queenOnCooldown = queenOnSpecialCooldown = gameOver = false;
 		aceAlive = jackAlive = kingAlive = queenAlive = true;
 	}
 	
@@ -129,9 +132,13 @@ public class HealthScript : MonoBehaviour {
 			queenHealthImage.color = new Color32 (255, (byte)(255.0f * queenHealth / queenMaxHealth),0,255);
 
 		// Check if either team has been defeated (team members dead). If so, show victory screen for that team
-		if (!queenAlive && !kingAlive) {
+		if (!gameOver && !queenAlive && !kingAlive) {
+			gameOver = true;
+			GameObject.Find("VictorySpadeCanvas").GetComponent<AudioSource>().Play ();
 			GameObject.Find ("VictorySpadeCanvas").GetComponent<CanvasGroup> ().alpha = 1;
-		} else if (!jackAlive && !aceAlive) {
+		} else if (!gameOver && !jackAlive && !aceAlive) {
+			gameOver = true;
+			GameObject.Find("VictoryHeartCanvas").GetComponent<AudioSource>().Play();
 			GameObject.Find ("VictoryHeartCanvas").GetComponent<CanvasGroup> ().alpha = 1;
 		}
 	}
