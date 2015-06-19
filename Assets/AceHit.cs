@@ -9,8 +9,7 @@ public class AceHit : MonoBehaviour {
 	void Awake() {
 		// Get animations for Ace
 		if (attackAnimation == null) 
-			attackAnimation = GameObject.Find ("AceModel").GetComponent<Animation> ();
-		
+			attackAnimation = GameObject.Find ("AceModel").GetComponent<Animation> ();	
 	}
 	
 	void OnTriggerEnter(Collider col) {

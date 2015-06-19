@@ -4,19 +4,7 @@ using Vuforia;
 
 public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 
-	// private GameObject AceObject;
-	// private GameObject JackObject;
-	// private GameObject KingObject;
-	// private GameObject QueenObject;
-
-	// private Animation AceAnimation;
-	// private Animation JackAnimation;
-	// private Animation KingAnimation;
-	// private Animation QueenAnimation;
-
-	HealthScript hs;
-
-	// Use this for initialization
+	// Register listeners for Virtual Buttons
 	void Start () {
 		// Application.targetFrameRate = 30;
 		
@@ -25,21 +13,9 @@ public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 		for (int i = 0; i < vbs.Length; i++) {
 			vbs [i].RegisterEventHandler (this);
 		}
-
-		// AceObject = GameObject.Find ("AceModel");
-		// AceAnimation = AceObject.GetComponent<Animation> ();
-
-		// JackObject = GameObject.Find ("JackModel");
-		// JackAnimation = JackObject.GetComponent<Animation> ();
-
-		// KingObject = GameObject.Find ("KingModel");
-		// KingAnimation = KingObject.GetComponent<Animation> ();
-
-		// QueenObject = GameObject.Find ("QueenModel");
-		// QueenAnimation = QueenObject.GetComponent<Animation> ();
-
 	}
 
+	// Called when Virtual Button is pressed
 	public void OnButtonPressed(VirtualButtonAbstractBehaviour vb){
 		switch (vb.VirtualButtonName){
 		case "AceAttackButton":
@@ -69,70 +45,64 @@ public class VirtualButtonEvent : MonoBehaviour, IVirtualButtonEventHandler {
 		}
 	}
 
+	// Called when Virtual Button is released -- First checks if character is alive
+	// If so, animate attack/special
 	public void OnButtonReleased(VirtualButtonAbstractBehaviour vb){
 		switch (vb.VirtualButtonName) {
 		case "AceAttackButton":
-			//if (hs.aceAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().aceAlive){
 				GameObject.Find ("AceModel").GetComponent<Animation> ().Play("AceAttack1");
-				//GameObject.Find ("AceModel").GetComponent<Animation> ().PlayQueued("AceIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log ("<<<<<AceAttack Released>>>>>");
 			break;
 		case "AceSpecialButton":
-			//if (hs.aceAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().aceAlive){
 				GameObject.Find ("AceModel").GetComponent<Animation> ().Play("AceAttack2");
-				//GameObject.Find ("AceModel").GetComponent<Animation> ().PlayQueued("AceIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log ("<<<<<AceSpecial Released>>>>>");
 			break;
 		case "JackAttackButton":
-			//if (hs.jackAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().jackAlive){
 				GameObject.Find ("JackModel").GetComponent<Animation> ().Play("JackAttack1");
-				//GameObject.Find ("JackModel").GetComponent<Animation> ().PlayQueued("JackIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log ("<<<<<JackAttack Released>>>>>");
 			break;
 		case "JackSpecialButton":
-			//if (hs.jackAlive) {
+			if (GameObject.FindObjectOfType<HealthScript> ().jackAlive) {
 				GameObject.Find ("JackModel").GetComponent<Animation> ().Play("JackAttack2");
-				//GameObject.Find ("JackModel").GetComponent<Animation> ().PlayQueued("JackIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log ("<<<<<JackSpecial Released>>>>>");
 			break;
 		case "KingAttackButton":
-			//if (hs.kingAlive) {
+			if (GameObject.FindObjectOfType<HealthScript> ().kingAlive) {
 				GameObject.Find ("KingModel").GetComponent<Animation> ().Play("KingAttack1");
-				//GameObject.Find ("KingModel").GetComponent<Animation> ().PlayQueued("KingIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log("<<<<<KingAttack Released>>>>>");
 			break;
 		case "KingSpecialButton":
-			//if (hs.kingAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().kingAlive){
 				GameObject.Find ("KingModel").GetComponent<Animation> ().Play("KingAttack2");
 				GameObject.FindObjectOfType<HealthScript>().kingDamageCooldown();
-				//GameObject.Find ("KingModel").GetComponent<Animation> ().PlayQueued("KingIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log("<<<<<KingSpecial Released>>>>>");
 			break;
 		case "QueenAttackButton":
-			//if (hs.queenAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().queenAlive){
 				GameObject.Find ("QueenModel").GetComponent<Animation> ().Play("QueenAttack1");
-				//GameObject.Find ("QueenModel").GetComponent<Animation> ().PlayQueued("QueenIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log("<<<<<QueenAttack Released>>>>>");
 			break;
 		case "QueenSpecialButton":
-			//if (hs.queenAlive){
+			if (GameObject.FindObjectOfType<HealthScript> ().queenAlive){
 				GameObject.Find ("QueenModel").GetComponent<Animation> ().Play("QueenAttack2");
 				GameObject.FindObjectOfType<HealthScript>().healSpecial();
-				//GameObject.Find ("QueenModel").GetComponent<Animation> ().PlayQueued("QueenIdle", QueueMode.CompleteOthers);
-			//}
+			}
 			Debug.Log("<<<<<QueenSpecial Released>>>>>");
 			break;
 		}
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame -- Check if each model is alive and not animating, if so play Idle animation
 	void Update () {
 	
 		// Check if models are animating and if not, play the Idle animation

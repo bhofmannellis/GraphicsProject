@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour {
 
+	// Use Singleton pattern to keep a single instance of HealthScript
+	// All objects in the game will access this instance for health management
 	public static HealthScript _Instance;
 
 	public static HealthScript Instance {
@@ -14,6 +16,8 @@ public class HealthScript : MonoBehaviour {
 		}
 	}
 
+	// Ace health and setter/getter
+	// When health changes, update Healthbars
     private int aceHealth;
 	public int AceHealth
 	{
@@ -21,47 +25,58 @@ public class HealthScript : MonoBehaviour {
 		set{aceHealth = value;
 			HandleHealth();}
 	}
+	// Jack health and setter/getter
+	// When health changes, update Healthbars
 	private int jackHealth;
 	public int JackHealth{
 		get{ return jackHealth;}
 		set{ jackHealth = value;
 			HandleHealth();}
 	}
+	// King health and setter/getter
+	// When health changes, update Healthbars
 	private int kingHealth;
 	public int KingHealth{
 		get{ return kingHealth;}
 		set{kingHealth = value;
 			HandleHealth();}
 	}
+	// Queen health and setter/getter
+	// When health changes, update Healthbars
 	private int queenHealth;
 	public int QueenHealth{
 		get{ return queenHealth;}
 		set{queenHealth = value;
 			HandleHealth();}
 	}
-	
+
+	// Variable for characters' max health -- Initial values are set in Unity
     public int aceMaxHealth;
 	public int jackMaxHealth;
 	public int kingMaxHealth;
     public int queenMaxHealth;
 
+	// Variable for characters' healthbar images. Used to show amount of health
 	public Image aceHealthImage;
 	public Image jackHealthImage;
 	public Image kingHealthImage;
     public Image queenHealthImage;
 
+	// Cooldowns for characters taking damage and Queen's special move -- Initial values are set in Unity
 	public float aceHealthCooldown;
 	public float jackHealthCooldown;
 	public float kingHealthCooldown;
 	public float queenHealthCooldown;
 	public float queenSpecialCooldown;
 
+	// Booleans for checking if a character is on cooldown (and thus can't take damage/use a special move)
 	public bool aceOnCooldown;
 	public bool jackOnCooldown;
 	public bool kingOnCooldown;
 	public bool queenOnCooldown;
 	public bool queenOnSpecialCooldown;
 
+	// Boolean for checking if a character is alive. Used for displaying victory canvas
 	public bool aceAlive;
 	public bool jackAlive;
 	public bool kingAlive;
@@ -70,29 +85,29 @@ public class HealthScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		// Instance = this;
-
+		// Set health to max
 		aceHealth = aceMaxHealth;
         jackHealth = jackMaxHealth;
         queenHealth = queenMaxHealth;
         kingHealth = kingMaxHealth;
 
+		// Set cooldowns to false and characters to alive
 		aceOnCooldown = jackOnCooldown = kingOnCooldown = queenOnCooldown = queenOnSpecialCooldown = false;
 		aceAlive = jackAlive = kingAlive = queenAlive = true;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
-	}
+	// Update is called once per frame -- Unused
+	void Update () {}
 
 	private void HandleHealth(){
 
+		// Image's fillAmount is set depending on percentage of health
 		aceHealthImage.fillAmount = (1.0f * aceHealth / aceMaxHealth);
 		jackHealthImage.fillAmount = (1.0f * jackHealth / jackMaxHealth);
 		kingHealthImage.fillAmount = (1.0f * kingHealth / kingMaxHealth);
 		queenHealthImage.fillAmount = (1.0f * queenHealth / queenMaxHealth);
 
+		// Color of health bar is set based on percentage of health (Green->Yellow->Red)
 		if (aceHealth > aceMaxHealth / 2)
 			aceHealthImage.color = new Color32 ((byte)(255.0f * (aceMaxHealth - aceHealth) /  (float) aceMaxHealth ),255,0,255);
 		else
@@ -113,32 +128,26 @@ public class HealthScript : MonoBehaviour {
 		else
 			queenHealthImage.color = new Color32 (255, (byte)(255.0f * queenHealth / queenMaxHealth),0,255);
 
-		// Check if either team has been defeated. If so, hide UI and show victory screen
+		// Check if either team has been defeated (team members dead). If so, show victory screen for that team
 		if (!queenAlive && !kingAlive) {
 			GameObject.Find ("VictorySpadeCanvas").GetComponent<CanvasGroup> ().alpha = 1;
-			GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
 		} else if (!jackAlive && !aceAlive) {
 			GameObject.Find ("VictoryHeartCanvas").GetComponent<CanvasGroup> ().alpha = 1;
-			GameObject.Find ("AceHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("JackHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("KingHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
-			GameObject.Find ("QueenHealthUICanvas").GetComponent<CanvasGroup> ().alpha = 0;
 		}
-
 	}
 
+	// Do damage to Ace
 	public void hitAce(int damage){
+		// Check if Ace is on cooldown
 		if (!aceOnCooldown) {
+			// If not, deincrement health by damage amount, set cooldown, and play hit animation
 			AceHealth -= damage;
 			aceDamageCooldown();
 			GameObject.Find ("AceModel").GetComponent<Animation> ().Play("AceHit");
-			GameObject.Find ("AceModel").GetComponent<Animation> ().PlayQueued("AceIdle");
+			// GameObject.Find ("AceModel").GetComponent<Animation> ().PlayQueued("AceIdle");
 		}
-		//aceHealth -= damage;
-		if (aceHealth <= 0) {
+		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
+		if (aceAlive && aceHealth <= 0) {
 			aceAlive = false;
 			aceHealth = 0;
 			GameObject.Find ("AceModel").GetComponent<Animation> ().Play("AceDie");
@@ -146,14 +155,17 @@ public class HealthScript : MonoBehaviour {
 		Debug.Log ("<<< AceHealth: " + aceHealth);
 	}
 	
+	// Do damage to Jack
 	public void hitJack(int damage){
+		// Check if Jack is on cooldown
 		if (!jackOnCooldown) {
+			// If not, deincrement health by damage amount, set cooldown, and play hit animation
 			JackHealth -= damage;
 			jackDamageCooldown();			
 			GameObject.Find ("JackModel").GetComponent<Animation> ().Play("JackHit");
-			GameObject.Find ("JackModel").GetComponent<Animation> ().PlayQueued("JackIdle");
+			// GameObject.Find ("JackModel").GetComponent<Animation> ().PlayQueued("JackIdle");
 		}
-		// jackHealth -= damage;
+		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
 		if (jackAlive && jackHealth <= 0) {
 			jackAlive = false;
 			jackHealth = 0;
@@ -162,13 +174,16 @@ public class HealthScript : MonoBehaviour {
 		Debug.Log ("<<< JackHealth: " + jackHealth);
 	}
 	
+	// Do damage to King
 	public void hitKing(int damage){
+		// Check if King is on cooldown
 		if (!kingOnCooldown) {
+			// If not, deincrement health by damage amount, set cooldown, and play dodge animation
 			KingHealth -= damage;
 			kingDamageCooldown();
 			GameObject.Find ("KingModel").GetComponent<Animation> ().Play("KingAttack2");
 		}
-		// kingHealth -= damage;
+		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
 		if (kingAlive && kingHealth <= 0) {
 			kingAlive = false;
 			kingHealth = 0;
@@ -176,15 +191,17 @@ public class HealthScript : MonoBehaviour {
 		Debug.Log ("<<< KingHealth: " + kingHealth);
 	}
 	
-	// If the queen is not on damage cooldown, register the hit and start the cooldown
+	// Do damage to Queen
 	public void hitQueen(int damage){
+		// Check if King is on cooldown
 		if (!queenOnCooldown) {
+			// If not, deincrement health by damage amount, set cooldown, and play dodge animation
 			QueenHealth -= damage;
 			queenDamageCooldown();
 			GameObject.Find ("QueenModel").GetComponent<Animation> ().Play("QueenHit");
-			GameObject.Find ("QueenModel").GetComponent<Animation> ().PlayQueued("QueenIdle");
+			// GameObject.Find ("QueenModel").GetComponent<Animation> ().PlayQueued("QueenIdle");
 		}
-		//queenHealth -= damage;
+		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
 		if (queenAlive && queenHealth <= 0) {
 			queenHealth = 0;
 			queenAlive = false;

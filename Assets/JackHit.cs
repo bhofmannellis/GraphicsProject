@@ -10,11 +10,10 @@ public class JackHit : MonoBehaviour {
 		// Get animations for Ace
 		if (attackAnimation == null) 
 			attackAnimation = GameObject.Find ("JackModel").GetComponent<Animation> ();
-		
 	}
 	
 	void OnTriggerEnter(Collider col) {
-		
+
 		if ((attackAnimation != null) && (attackAnimation.isPlaying)) {
 			
 			// Check that QueenTarget exists in the game space

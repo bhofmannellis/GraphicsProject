@@ -23,8 +23,7 @@ public class KingHit : MonoBehaviour {
 				if (col.gameObject.name == "Bip01") {
 					
 					// If so, apply damage if the attack is active
-					// if (attackAnimation ["AceAttack1"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitAce (50);
+					GameObject.FindObjectOfType<HealthScript> ().hitAce (50);
 				}
 			}
 			
@@ -34,8 +33,7 @@ public class KingHit : MonoBehaviour {
 				if (col.gameObject.name == "Bip01"){
 					
 					// If so, apply damage if the attack is active
-					// if (attackAnimation ["AceAttack1"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitJack (50);
+					GameObject.FindObjectOfType<HealthScript> ().hitJack (50);
 				}
 			} 
 		}
