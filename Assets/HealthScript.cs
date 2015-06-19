@@ -151,6 +151,7 @@ public class HealthScript : MonoBehaviour {
 			AceHealth -= damage;
 			aceDamageCooldown();
 			GameObject.Find ("AceModel").GetComponent<Animation> ().Play("AceHit");
+			GameObject.Find ("AceModel").GetComponent<ParticleSystem> ().Play();
 			// GameObject.Find ("AceModel").GetComponent<Animation> ().PlayQueued("AceIdle");
 		}
 		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
@@ -170,6 +171,7 @@ public class HealthScript : MonoBehaviour {
 			JackHealth -= damage;
 			jackDamageCooldown();			
 			GameObject.Find ("JackModel").GetComponent<Animation> ().Play("JackHit");
+			GameObject.Find ("JackModel").GetComponent<ParticleSystem> ().Play();
 			// GameObject.Find ("JackModel").GetComponent<Animation> ().PlayQueued("JackIdle");
 		}
 		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
@@ -189,6 +191,7 @@ public class HealthScript : MonoBehaviour {
 			KingHealth -= damage;
 			kingDamageCooldown();
 			GameObject.Find ("KingModel").GetComponent<Animation> ().Play("KingAttack2");
+			GameObject.Find ("KingModel").GetComponent<ParticleSystem> ().Play();
 		}
 		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
 		if (kingAlive && kingHealth <= 0) {
@@ -206,6 +209,7 @@ public class HealthScript : MonoBehaviour {
 			QueenHealth -= damage;
 			queenDamageCooldown();
 			GameObject.Find ("QueenModel").GetComponent<Animation> ().Play("QueenHit");
+			GameObject.Find ("QueenModel").GetComponent<ParticleSystem> ().Play();
 			// GameObject.Find ("QueenModel").GetComponent<Animation> ().PlayQueued("QueenIdle");
 		}
 		// If health is below 0, set it to 0, set Alive flag to false, and play Death animation
