@@ -3,7 +3,6 @@ using System.Collections;
 
 public class AceHit : MonoBehaviour {
 	
-	// Drag the main object's Animation component onto this in the Inspector:
 	public Animation attackAnimation;
 
 	void Awake() {
@@ -36,9 +35,9 @@ public class AceHit : MonoBehaviour {
 			
 					// If so, apply damage according to which attack is active
 					if (attackAnimation ["AceAttack1"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitKing (10);
+						GameObject.FindObjectOfType<HealthScript> ().hitKing (25);
 					else if (attackAnimation ["AceAttack2"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitKing (20);		
+						GameObject.FindObjectOfType<HealthScript> ().hitKing (35);		
 				}
 			} 
 		}

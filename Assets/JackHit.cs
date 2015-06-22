@@ -3,11 +3,10 @@ using System.Collections;
 
 public class JackHit : MonoBehaviour {
 	
-	// Drag the main object's Animation component onto this in the Inspector:
 	public Animation attackAnimation;
 	
 	void Awake() {
-		// Get animations for Ace
+		// Get animations for Jack
 		if (attackAnimation == null) 
 			attackAnimation = GameObject.Find ("JackModel").GetComponent<Animation> ();
 	}
@@ -23,9 +22,9 @@ public class JackHit : MonoBehaviour {
 					
 					// If so, apply damage according to which attack is active
 					if (attackAnimation ["JackAttack1"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitQueen (15);
-					else if (attackAnimation ["JackAttack2"].enabled)
 						GameObject.FindObjectOfType<HealthScript> ().hitQueen (30);
+					else if (attackAnimation ["JackAttack2"].enabled)
+						GameObject.FindObjectOfType<HealthScript> ().hitQueen (45);
 				}
 			}
 			
@@ -36,9 +35,9 @@ public class JackHit : MonoBehaviour {
 					
 					// If so, apply damage according to which attack is active
 					if (attackAnimation ["JackAttack1"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitKing (10);
+						GameObject.FindObjectOfType<HealthScript> ().hitKing (25);
 					else if (attackAnimation ["JackAttack2"].enabled)
-						GameObject.FindObjectOfType<HealthScript> ().hitKing (15);		
+						GameObject.FindObjectOfType<HealthScript> ().hitKing (40);		
 				}
 			} 
 		}

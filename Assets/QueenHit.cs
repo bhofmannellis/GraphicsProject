@@ -3,11 +3,10 @@ using System.Collections;
 
 public class QueenHit : MonoBehaviour {
 	
-	// Drag the main object's Animation component onto this in the Inspector:
 	public Animation attackAnimation;
 	
 	void Awake() {
-		// Get animations for Ace
+		// Get animations for Queen
 		if (attackAnimation == null) 
 			attackAnimation = GameObject.Find ("QueenModel").GetComponent<Animation> ();
 		
